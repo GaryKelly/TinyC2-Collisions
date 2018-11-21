@@ -130,35 +130,67 @@ int main()
 			player.getAnimatedSprite().getPosition().y + 
 			player.getAnimatedSprite().getGlobalBounds().height
 		);
-
-		// Process events
 		sf::Event event;
-		while (window.pollEvent(event))
+		switch (event.KeyPressed)
 		{
-			switch (event.type)
+		case sf::Keyboard::Num1:
+			if (!input.getCurrent() == Input::AABBTOAABB)
 			{
-			case sf::Event::Closed:
-				// Close window : exit
-				window.close();
-				break;
-			case sf::Event::KeyPressed:
-				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-				{
-					input.setCurrent(Input::Action::LEFT);
-				}
-				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-				{
-					input.setCurrent(Input::Action::RIGHT);
-				}
-				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
-				{
-					input.setCurrent(Input::Action::UP);
-				}
-				break;
-			default:
-				input.setCurrent(Input::Action::IDLE);
-				break;
+				input.setCurrent(Input::AABBTOAABB);
 			}
+			break;
+		case sf::Keyboard::Num2:
+			if (!input.getCurrent() == Input::AABBTOCAPSULE)
+			{
+				input.setCurrent(Input::AABBTOCAPSULE);
+			}
+			break;
+		case sf::Keyboard::Num3:
+			if (!input.getCurrent() == Input::AABBTOPOLY)
+			{
+				input.setCurrent(Input::AABBTOPOLY);
+			}
+			break;
+		case sf::Keyboard::Num4:
+			if (!input.getCurrent() == Input::AABBTORAY)
+			{
+				input.setCurrent(Input::AABBTORAY);
+			}
+			break;
+		case sf::Keyboard::Num5:
+			if (!input.getCurrent() == Input::CIRCLETOAABB)
+			{
+				input.setCurrent(Input::CIRCLETOAABB);
+			}
+			break;
+		case sf::Keyboard::Num6:
+			if (!input.getCurrent() == Input::CIRCLETOCIRCLE)
+			{
+				input.setCurrent(Input::CIRCLETOCIRCLE);
+			}
+			break;
+		case sf::Keyboard::Num7:
+			if (!input.getCurrent() == Input::CIRCLETORAY)
+			{
+				input.setCurrent(Input::CIRCLETORAY);
+			}
+			break;
+		case sf::Keyboard::Num8:
+			break;
+		case sf::Keyboard::Num9:
+			break;
+		case sf::Keyboard::Num0:
+			break;
+		case sf::Keyboard::Q:
+			break;
+		case sf::Keyboard::W:
+			break;
+		case sf::Keyboard::E:
+			break;
+		case sf::Keyboard::Escape:
+			break;
+		default:
+			break;
 		}
 
 		// Handle input to Player

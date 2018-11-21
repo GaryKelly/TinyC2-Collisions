@@ -6,18 +6,27 @@ public:
 	Input();
 	~Input();
 
-	enum Action
+	enum CollisionDetect
 	{
-		IDLE,
-		UP,
-		LEFT,
-		RIGHT
+		AABBTOAABB,
+		AABBTOCAPSULE,
+		AABBTOPOLY,
+		AABBTORAY,
+		CIRCLETOAABB,
+		CIRCLETOCIRCLE,
+		CIRCLETORAY,
+		CIRCLETOCAPSULE,
+		CIRCLETOPOLY,
+		RAYTOAABB,
+		RAYTOCAPSULE,
+		RAYTOCIRCLE,
+		RAYTOPOLY
 	};
 
-	void setCurrent(Action);
-	Action getCurrent();
+	void setCurrent(CollisionDetect);
+	CollisionDetect getCurrent();
 
 private:
-	Action m_current;
+	CollisionDetect m_current;
 };
 #endif

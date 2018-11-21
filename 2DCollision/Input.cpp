@@ -2,14 +2,14 @@
 
 Input::Input() 
 {
-	m_current = IDLE;
+	m_current = AABBTOAABB;
 }
 Input::~Input() {}
 
-void Input::setCurrent(Action a) {
+void Input::setCurrent(CollisionDetect a) {
 	m_current = a;
 }
 
-Input::Action Input::getCurrent() {
+Input::CollisionDetect Input::getCurrent() {
 	return m_current;
 }

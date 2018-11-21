@@ -32,19 +32,19 @@ void NPC::handleInput(Input in)
 
 	switch (in.getCurrent())
 	{
-	case Input::Action::IDLE:
+	case Input::CollisionDetect::IDLE:
 		//std::cout << "Player Idling" << std::endl;
 		m_player_fsm.idle();
 		break;
-	case Input::Action::UP:
+	case Input::CollisionDetect::UP:
 		//std::cout << "Player Up" << std::endl;
 		m_player_fsm.climbing();
 		break;
-	case Input::Action::LEFT:
+	case Input::CollisionDetect::LEFT:
 		//std::cout << "Player Left" << std::endl;
 		m_player_fsm.jumping();
 		break;
-	case Input::Action::RIGHT:
+	case Input::CollisionDetect::RIGHT:
 		//std::cout << "Player Idling" << std::endl;
 		m_player_fsm.jumping();
 		break;
